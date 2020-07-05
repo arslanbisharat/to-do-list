@@ -67,7 +67,23 @@ body {
     user-select: none;
     cursor: pointer;
 }
+/* The button to create new projects */
 
+#new-project-btn {
+    font-size: 40px;
+    position: absolute;
+    bottom: 25px;
+    right: 100px;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    background-color: white;
+    box-shadow: 0px 1px 10px rgb(0,0,0);
+    text-align: center;
+    line-height: 50px;
+    user-select: none;
+    cursor: pointer;
+}
 /* The look of tasks list */
 
 .task {
