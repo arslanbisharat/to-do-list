@@ -1,6 +1,8 @@
+let projects = [];
+
 const Project = (title) => {
     const getTitle = () => title;
-    return getTitle;
+    return {getTitle};
 }
 
-export default Project 
+export {Project, projects}
