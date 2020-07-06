@@ -12,6 +12,29 @@ This is the 4th project of the Main Javascript curriculum at [Microverse](https:
 ## Live Link
 [Click Here](https://rawcdn.githack.com/arslanbisharat/to-do-list/71191fc861acd68710d08ef76cc6e492d3efefd9/dist/index.html)
 
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+What things you need to install the software and how to install them
+```
+node
+```
+
+
+### Installing
+```
+npm install 
+
+```
+
+
+### Up and running
+```
+Open the index.html file in your browser
+```
 ## Built With
 
 - HTML5
