@@ -1,0 +1,336 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aqua;
+}
+/* Set app to fit whole screen */
+
+#app {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* How the panels look like  */
+
+#projects-pane {
+    flex: 1 0 0;
+    border-right: 1px solid black;
+    height: 100%;
+    overflow-y: scroll;
+    scrollbar-color: #3e92cc #cdd1f3;
+    scrollbar-width: thin;
+}
+
+#projects-title {
+    font-size: 2em;
+    color: #13293d;
+    padding-left: 1em;
+    text-transform: capitalize;
+}
+
+#projects-input {
+    font-size: 1.5rem;
+    background-color: #bfdaec;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    padding: 2rem;
+    width: 100%;
+}
+
+.project {
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    padding: 2rem;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.project:hover {
+    background-color: #cdf3f3;
+    cursor: pointer;
+}
+
+.project.active {
+    background-color: #cdd1f3;
+    border-left: 5px solid #707df0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#delete-project {
+    position: absolute;
+    right: 5%;
+    text-align: center;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    font-size: 0.75em;
+    color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.05);
+}
+
+#delete-project:hover {
+    color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.2);
+}
+
+#tasks-pane {
+    flex: 3 0 0;
+    border-right: 1px solid #3e92cc;
+    height: 100%;
+    overflow-y: scroll;
+    scrollbar-color: #3e92cc #cdd1f3;
+    scrollbar-width: thin;
+}
+
+#tasks-title {
+    font-size: 2em;
+    color: #13293d;
+    padding-left: 1em;
+    text-transform: capitalize;
+}
+
+#tasks-input-container {
+    position: relative;
+}
+
+#tasks-input {
+    font-size: 1rem;
+    background-color: #bfdaec;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    padding: 2rem;
+    width: 100%;
+    z-index: 100;
+}
+
+/* date picker */ 
+
+#select-deadline {
+    position: absolute;
+    display: block;
+    top: 1rem;   
+    right: 14%;
+    width: 20%;
+    height: 3rem;
+    line-height: 3rem;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: 'Ubuntu', sans-serif;
+}  
+
+/* priority picker */
+#select-priority {
+    position: absolute;
+    display: block;
+    top: 1rem;   
+    right: 2%;
+    width: 10%;
+    height: 3rem;
+    line-height: 3rem;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}  
+
+/* tasks description input */
+#tasks-description {
+    width: 100%;
+    height: 10rem;
+    padding: 2rem;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    resize: none;
+    background-color: #cdf3f3;
+    font-family: 'Ubuntu', sans-serif;
+}  
+
+#create-task-button {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 3rem;
+    user-select: none;
+    color: #707df0;
+    background-color: #cdd1f3;;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    box-shadow: 0px 0px 8px 1px #707df0;
+    cursor: pointer;
+}
+/* Tasks list */
+
+.task {
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    padding: 2rem;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.task:hover {
+    background-color: #cdf3f3;
+    cursor: pointer;
+}
+
+.task.active {
+    background-color: #cdd1f3;
+    border-left: 5px solid #707df0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.task.done {
+    background-color: #f3f3f3;
+    color: #7a7a7a;
+    text-decoration: line-through;
+}
+
+#delete-task {
+    position: absolute;
+    right: 5%;
+    text-align: center;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    font-size: 1.25em;
+    color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.05);
+}
+
+#delete-task:hover {
+    color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.2);
+}
+
+#done-task {
+    position: absolute;
+    right: 12%;
+    text-align: center;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    font-size: 1.25em;
+    color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.05);
+}
+
+#done-task:hover {
+    color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.2);
+}
+
+/* Detail panel */
+
+#details-pane {
+    flex: 2 0 0;
+    margin: 0.2em 2em;
+}
+
+#details-title {
+    font-size: 2em;
+    color: #13293d;
+    text-transform: capitalize;
+}
+
+#details-title-edit {
+    width: 100%;
+    font-family: "Ubuntu", sans-serif;
+    margin: 0.7em 0;
+    font-size: 2em;
+    font-weight: bold;
+    color: #13293d;
+    outline: none;
+    border: none;
+    background-color: #f3f3f3;
+}
+
+#details-description-edit {
+    position: relative;
+    width: 100%;
+    height: 10rem;
+    padding: 0.2rem;
+    resize: none;
+    font-family: "Ubuntu", sans-serif;
+    margin: 0.7em 0;
+    color: #13293d;
+    outline: none;
+    border: none;
+    background-color: #f3f3f3;
+}
+
+#details-description-container {
+    position: relative;
+}
+
+#update-description-button {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 3rem;
+    user-select: none;
+    color: #707df0;
+    background-color: #cdd1f3;;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    box-shadow: 0px 0px 8px 1px #707df0;
+    cursor: pointer;
+}
+
+#update-due-button {
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+    text-align: center;
+    font-size: 1rem;
+    user-select: none;
+    margin-left: 1rem;
+    color: #707df0;
+    background-color: #cdd1f3;;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2px 1px #707df0;
+    cursor: pointer;
+    position: relative;
+}
+
+#update-priority-button {
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+    text-align: center;
+    font-size: 1rem;
+    user-select: none;
+    margin-left: 1rem;
+    color: #707df0;
+    background-color: #cdd1f3;;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2px 1px #707df0;
+    cursor: pointer;
+    position: relative;
+}
